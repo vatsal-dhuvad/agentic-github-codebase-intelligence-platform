@@ -1,0 +1,45 @@
+app:
+  name: Agentic GitHub Codebase Intelligence Platform
+  description: Analyze GitHub repositories with LangChain, LangGraph, RAG, FAISS, and LLM fallback.
+
+limits:
+  max_repo_mb: 25
+  max_files: 120
+  max_file_kb: 220
+
+models:
+  primary_provider: Gemini
+  gemini_model: gemini-2.5-flash-lite
+  groq_model: llama-3.1-8b-instant
+  mistral_model: mistral-small-latest
+  embedding_model: sentence-transformers/all-MiniLM-L6-v2
+
+rag:
+  vector_database: FAISS
+  chunk_size: 1000
+  chunk_overlap: 180
+  retrieval_k: 8
+
+ignore:
+  directories:
+    - .git
+    - node_modules
+    - .venv
+    - venv
+    - dist
+    - build
+    - .next
+    - coverage
+    - __pycache__
+  extensions:
+    - .png
+    - .jpg
+    - .jpeg
+    - .gif
+    - .webp
+    - .ico
+    - .pdf
+    - .zip
+    - .exe
+    - .dll
+
